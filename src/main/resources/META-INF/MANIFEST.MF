@@ -1,0 +1,3 @@
+Agent-Class: io.github.coolcrabs.quiltgoslightlyfasterlol.Yeet
+Can-Redefine-Classes: true
+Can-Retransform-Classes: true
