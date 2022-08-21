@@ -1,0 +1,12 @@
+@nilmod {
+    /* There is no id field. The filename defines the id of the mod. */
+    name: "QuiltGoSlightlyFasterLol";
+    description: "gotta go fast";
+    authors: "CoolMineman";
+    version: "1337";
+}
+
+entrypoints {
+    /* premain is the only entrypoint defined by NilLoader itself. */
+    premain: "io.github.coolcrabs.quiltgoslightlyfasterlol.QuiltGoSlightlyFasterLolPremain";
+}
