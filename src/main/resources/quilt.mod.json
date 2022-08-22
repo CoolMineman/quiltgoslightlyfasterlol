@@ -3,7 +3,7 @@
     "quilt_loader": {
         "group": "io.githu.coolcrabs",
         "id": "quiltgoslightlyfasterlol",
-        "version": "0.0.2",
+        "version": "0.0.3",
         "intermediate_mappings": "net.fabricmc:intermediary",
         "entrypoints": {
             "pre_launch": "io.github.coolcrabs.quiltgoslightlyfasterlol.Evil"

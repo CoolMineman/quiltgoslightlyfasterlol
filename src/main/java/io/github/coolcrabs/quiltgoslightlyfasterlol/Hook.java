@@ -123,10 +123,8 @@ public class Hook {
                     }
                     case ZipEntry.DEFLATED: {
                         MappedByteBuffer mbb = fc.map(MapMode.READ_ONLY, pos, rem);
-                        ByteBuffer r0 = ByteBuffer.allocateDirect((int) size);
-                        Native.libdeflate_inflate(tl.get(), mbb, 0, (int) rem, r0, 0, (int) size);
                         byte[] r = new byte[(int) size];
-                        r0.get(r);
+                        Native.libdeflate_inflate(tl.get(), mbb, 0, (int) rem, r, 0, (int) size);
                         return r;
                     }
                     default:

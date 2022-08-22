@@ -7,25 +7,24 @@ import java.util.Map;
 import org.quiltmc.loader.api.ModContainer;
 import org.quiltmc.loader.api.entrypoint.PreLaunchEntrypoint;
 
-import com.sun.tools.attach.VirtualMachine;
+
 
 public class Evil implements PreLaunchEntrypoint {
 
     @Override
     public void onPreLaunch(ModContainer mod) {
+        boolean worked = true;
+        long t1 = System.nanoTime();
         try {
-            Map<String, String> savedProps = (Map<String, String>) Hax.savedProps.get();
-            savedProps.put("jdk.attach.allowAttachSelf", "true");
-
-            String nameOfRunningVM = ManagementFactory.getRuntimeMXBean().getName();
-            String pid = nameOfRunningVM.substring(0, nameOfRunningVM.indexOf('@'));
-
-            // load the agent
-            VirtualMachine vm = VirtualMachine.attach(pid);
-            vm.loadAgent(Paths.get(Evil.class.getProtectionDomain().getCodeSource().getLocation().toURI()).toString(), "");
-            vm.detach();
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+            Evil0.upToNoGood();
+        } catch (Throwable t) {
+            worked = false;
+            System.out.println("Failed to load QuiltGoSlightlyFasterLol :(");
+            t.printStackTrace();
+        }
+        long t2 = System.nanoTime();
+        if (worked) {
+            System.out.println("Loaded QuiltGoSlightlyFasterLol " + (t2 - t1) + "ns");
         }
     }
     

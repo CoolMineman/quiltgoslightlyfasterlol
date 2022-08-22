@@ -43,7 +43,7 @@ public class Buildscript extends SimpleQuiltProject {
 
     @Override
     public void getModDependencies(ModDependencyCollector d) {
-        zipFast = d.addMaven(Maven.MAVEN_LOCAL, new MavenId("io.github.coolmineman", "zipfast", "0.0.1"), ModDependencyFlag.COMPILE, ModDependencyFlag.RUNTIME);
+        zipFast = d.addMaven(Maven.MAVEN_LOCAL, new MavenId("io.github.coolmineman", "zipfast", "0.0.2"), ModDependencyFlag.COMPILE, ModDependencyFlag.RUNTIME);
     }
 
     @Override
